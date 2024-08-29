@@ -25,7 +25,7 @@ export const tratamientos = [
       descripcion: 'Con este tratamiento, podemos tanto aumentar el volumen, como hidratar el labio sin aportar volúmen, además de corregir asimetrías en la forma.',
       resultado: 'Inmediato',
       duracion: '12-18 meses',
-      anestesia: 'No necesaria',
+      anestesia: 'Tópica',
       aplicacion: '15 min',
       imagen: 'labios.jpeg'
     },
@@ -35,7 +35,7 @@ export const tratamientos = [
       descripcion: 'Son productos que inyectamos para estimular la producción natural de colágeno, tipo uno y tres. Gracias a ellos recuperamos firmeza en la piel.',
       resultado: 'Inmediato',
       duracion: 'Hasta 2 años',
-      anestesia: 'Tópica',
+      anestesia: 'No necesaria',
       aplicacion: '30 minutos',
       imagen: 'colageno.jpg'
     },
@@ -43,7 +43,7 @@ export const tratamientos = [
       numero: '5',
       nombre: 'Tratamiento de bruxismo',
       descripcion: 'El bruxismo es una patología producida por la fuerza excesiva del músculo masetero, esto provoca dolor en cuello, cabeza y mandíbula. Mediante la inyección de neuromoduladores, disminuimos la fuerza en el músculo consiguiendo así relajarlo y mejorar los síntomas.',
-      resultado: 'Al mes',
+      resultado: '15 días',
       duracion: 'De 4-6 meses',
       anestesia: 'No necesaria',
       aplicacion: '15 min',
@@ -55,7 +55,7 @@ export const tratamientos = [
       descripcion: 'Gracias a este tratamiento regeneramos la apariencia de la piel y estimulamos la producción de colágeno, mejorando el aspecto de la misma y produciendo un aumento de la luminosidad.',
       resultado: 'Inmediato',
       duracion: 'Recomendación 5 sesiones al año',
-      anestesia: 'No necesario',
+      anestesia: 'Tópica',
       aplicacion: '15 min',
       imagen: 'mesoterapia.jpeg'
     },
@@ -92,11 +92,11 @@ export const tratamientos = [
     {
       numero: '10',
       nombre: 'Eliminación de arrugas de expresión',
-      descripcion: 'Con este tratamiento podemos mejorar la apariencia de las arrugas de frente entrecejo y patas de gallo gracias a una sustancia que actúa sobre los músculos que contraen estas zonas. Al evitar la contracción excesiva de estos músculos, reduce las arrugas de expresión en la piel y evita que estas queden marcadas.',
-      resultado: 'Al mes',
+      descripcion: 'Con este tratamiento podemos mejorar la apariencia de las arrugas de frente, entrecejo y patas de gallo gracias a una sustancia que actúa sobre los músculos que contraen estas zonas. Al evitar la contracción excesiva de estos músculos, reduce las arrugas de expresión en la piel y evita que estas queden marcadas.',
+      resultado: '15 días',
       duracion: 'De 4-6 meses',
       anestesia: 'No necesaria',
-      aplicacion: '30 min',
+      aplicacion: '15 min',
       imagen: 'arrugas.jpg'
     },
     {
@@ -143,7 +143,7 @@ export const tratamientos = [
       numero: '15',
       nombre: 'Tratamiento de la sonrisa gingival',
       descripcion: 'Alteración que se produce por una exposición excesiva de la encía al sonreír. Gracias a este tratamiento conseguiremos una sonrisa bonita sin perder la naturalidad.',
-      resultado: 'A partir del 3 día',
+      resultado: 'Inmediato',
       duracion: 'De 4-6 meses',
       anestesia: 'No necesaria',
       aplicacion: '15 min',
@@ -173,8 +173,8 @@ export const tratamientos = [
       numero: '18',
       nombre: 'Tratamiento de manchas',
       descripcion: 'Conseguiremos la mejoría de esta patología gracias a la combinación de varios tratamientos.',
-      resultado: 'Tras 3 sesiones',
-      duracion: 'Hasta la aparición de una nueva mancha',
+      resultado: 'Valorar en consulta',
+      duracion: 'Valorar en consulta',
       anestesia: 'No necesaria',
       aplicacion: '30 min',
       imagen: 'manchas.jpeg'

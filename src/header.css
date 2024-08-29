@@ -32,8 +32,11 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--fondo-submenu);
+    visibility: visible;
 }
-
+.submenu li:active .submenu{
+    
+}
 .fullmenu__item {
     flex: 0 0 auto;
     padding: 0 80px;
@@ -97,6 +100,7 @@ body {
     .fullmenu.open {
         transform: translateX(0);
     }
+    
 
     .fullmenu__item {
         padding: 20px;

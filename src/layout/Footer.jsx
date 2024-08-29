@@ -33,6 +33,12 @@ function Footer() {
             <FontAwesomeIcon icon={faInstagram} className='mr-2 md:mr-4' />@clinica.hebelo
           </a>
         </div>
+        <div>
+        <a href="https://www.instagram.com/dra.genovevamodelo/" target='_blank' rel='noopener noreferrer' className='font-thin text-base md:text-xl block mt-2'>
+              <FontAwesomeIcon icon={faInstagram} className='mr-2 md:mr-4 ' />
+              @dra.genovevamodelo
+            </a>
+        </div>
       </div>
     </footer>
   )

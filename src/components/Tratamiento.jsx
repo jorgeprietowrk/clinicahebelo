@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { tratamientos } from '../js/tratamientos';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,6 +46,7 @@ const imageMap = {
 };
 
 function Tratamiento() {
+ 
   const { numero } = useParams();
   const tratamiento = tratamientos.find(t => t.numero === numero);
 
@@ -54,7 +55,12 @@ function Tratamiento() {
   }
 
   const imageUrl = tratamiento.imagen ? imageMap[tratamiento.imagen] : h;
-
+/* useEffect(() => {
+    const submenu = document.getElementById('submenu-pink');
+    if (submenu) {
+      submenu.style.visibility = 'hidden';
+    }
+  }, []); */
   return (
     <section id='nv' className='mt-10 px-4 sm:px-8 lg:px-16 mb-20'>
       <div className='titulo lg:w-2/3 w-full lg:text-center sm:text-center md:text-center lg:mb-20 text-left text-5xl sm:text-5xl lg:text-7xl font-bold break-words' style={{ whiteSpace: 'pre-wrap' }}>

@@ -30,7 +30,15 @@ function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const isActive = (path) => location.pathname === path ? 'font-bold' : '';
-
+    const ocultarSubmenu = () => {
+            const submenu = document.getElementById('submenu-pink');
+            if (submenu) {
+              submenu.style.visibility = 'hidden';
+              setTimeout(() =>{
+                submenu.style.visibility = 'visible';
+              }, 300);
+            }
+    }
     return (
         <>
         <header>
@@ -43,10 +51,10 @@ function Header() {
                 <li className="fullmenu__item"><Link to="/" onClick={() => setMenuOpen(false)} className={`${isActive('/')} hover:font-bold`}>NOSOTROS</Link></li>
                 <li className="fullmenu__item"> 
                     <Link to="/tratamientos" onClick={() => setMenuOpen(false)} className={`${isActive('/tratamientos')} hover:font-bold `}>TRATAMIENTOS</Link>
-                    <ul className='submenu'>
+                    <ul  id='submenu-pink' className='submenu'>
                         {tratamientos.map(tratamiento => (
                             <li key={tratamiento.numero}>
-                                <Link to={`/tratamientos/${tratamiento.numero}`} onClick={() => setMenuOpen(false)} className='block p-6 hover:text-gray-400'>
+                                <Link to={`/tratamientos/${tratamiento.numero}`} onClick={() =>{ setMenuOpen(false); ocultarSubmenu()}} className='block p-6 hover:text-gray-400'>
                                     {tratamiento.nombre}
                                 </Link>
                             </li>
