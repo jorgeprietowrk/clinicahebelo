@@ -20,9 +20,7 @@
   font-weight: bold;
   font-style: normal;
 }
-/* .asd{
-  border: 2px solid black;
-} */
+
 .didone {
   font-family: "Antic Didone", serif;
   font-weight: 500;
@@ -129,6 +127,44 @@ main {
 #foto-tr img {
   height: 100%;
   object-fit: cover;
+}
+
+
+.slider-image {
+  position: relative;
+}
+
+.slider-image img {
+  width: 100%;
+  height: auto; /* Asegúrate de que la imagen no se estire */
+}
+
+.slider-image .text-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.slider-image .text-overlay h2 {
+  font-size: 2rem; /* Ajusta según el tamaño deseado */
+  margin-bottom: 1rem;
+}
+
+.slider-image .text-overlay a {
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.slider-image .text-overlay a:hover {
+  background-color: #333;
 }
 
 @media (min-width: 600px) {

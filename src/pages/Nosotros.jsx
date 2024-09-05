@@ -14,8 +14,6 @@ import home2 from '../media/home2.jpeg';
 import home3 from '../media/home3.jpeg';
 import CasosSlider from '../components/CasosSlider';
 
-
-
 const PrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
@@ -42,8 +40,6 @@ const NextArrow = (props) => {
   );
 };
 
-
-
 function Nosotros() {
   const sliderSettings = {
     dots: true,
@@ -54,26 +50,28 @@ function Nosotros() {
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
     adaptiveHeight: true,
+    autoplay: true, 
+    autoplaySpeed: 6000,
   };
 
   return (
     <>
       <main>
         <div className='slider-section mt-2'>
-        <Slider {...sliderSettings}>
+          <Slider {...sliderSettings}>
             <div className="slider-image relative">
-              <img src={home1} alt="Clínica Hébelo" className="w-full h-auto object-cover" />
+              <img src={home1} alt="Clínica Hébelo" className="w-full h-full object-cover" />
             </div>
 
             <div className="slider-image relative">
-              <img src={home2} alt="Imagen 2" className="w-full h-auto object-cover" />
-              <div className="absolute inset-0 flex flex-col items-end justify-center text-black font-antic-didone p-8 sm:p-16 lg:p-32">
-                <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 didone text-right">
+              <img src={home2} alt="Imagen 2" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 flex flex-col items-end justify-center text-black font-antic-didone p-8 sm:p-12 md:p-16 lg:p-20">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 didone text-right">
                   SOBRE LA <br /> DOCTORA
                 </h2>
                 <Link
                   to="/dra-modelo"
-                  className="text-lg sm:text-xl lg:text-2xl px-4 py-2 bg-black hover:bg-gray-800 transition-colors duration-300 text-white rounded mt-4 sm:mt-6 lg:mt-8 mr-8 sm:mr-12 lg:mr-16"
+                  className="text-sm sm:text-lg md:text-xl lg:text-2xl px-4 py-2 bg-black hover:bg-gray-800 transition-colors duration-300 text-white rounded mt-4 sm:mt-6 lg:mt-8 mr-4 sm:mr-6 lg:mr-8"
                 >
                   Ver Más
                 </Link>
@@ -81,20 +79,19 @@ function Nosotros() {
             </div>
 
             <div className="slider-image relative">
-  <img src={home3} alt="Imagen 3" className="w-full h-auto object-cover" />
-  <div className="absolute inset-0 flex flex-col items-start justify-center text-black font-antic-didone p-8 sm:p-16 lg:p-32">
-    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 didone">
-      TRATAMIENTOS
-    </h2>
-    <Link
-      to="/tratamientos"
-      className="sm:text-4xl lg:text-2xl px-4 py-2 bg-black hover:bg-gray-800 transition-colors duration-300 text-white rounded sm:mt-2 lg:mt-6"
-    >
-      Ver Tratamientos
-    </Link>
-  </div>
-</div>
-
+              <img src={home3} alt="Imagen 3" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 flex flex-col items-start justify-center text-black font-antic-didone p-8 sm:p-12 md:p-16 lg:p-20 w-full lg:w-[70%]">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 didone">
+                  TRATAMIENTOS
+                </h2>
+                <Link
+                  to="/tratamientos"
+                  className="text-sm sm:text-lg md:text-xl lg:text-2xl px-4 py-2 bg-black hover:bg-gray-800 transition-colors duration-300 text-white rounded mt-4 sm:mt-6 lg:mt-8"
+                >
+                  Ver Tratamientos
+                </Link>
+              </div>
+            </div>
           </Slider>
         </div>
 
@@ -150,16 +147,16 @@ function Nosotros() {
         <div className='slider-section'>
           <Slider {...sliderSettings}>
             <div className="slider-image">
-              <img src={clinica1} alt="Clinica Hébelo" className="w-full h-auto object-cover" />
+              <img src={clinica1} alt="Clinica Hébelo" className="w-full h-full object-cover" />
             </div>
             <div className="slider-image">
-              <img src={clinica2} alt="Clinica Hébelo" className="w-full h-auto object-cover" />
+              <img src={clinica2} alt="Clinica Hébelo" className="w-full h-full object-cover" />
             </div>
             <div className="slider-image">
-              <img src={clinica3} alt="Clinica Hébelo" className="w-full h-auto object-cover" />
+              <img src={clinica3} alt="Clinica Hébelo" className="w-full h-full object-cover" />
             </div>
             <div className="slider-image">
-              <img src={clinica4} alt="Clinica Hébelo" className="w-full h-auto object-cover" />
+              <img src={clinica4} alt="Clinica Hébelo" className="w-full h-full object-cover" />
             </div>
           </Slider>
         </div>

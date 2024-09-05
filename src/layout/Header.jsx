@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../index.css';
 import '../header.css';
@@ -29,50 +29,67 @@ function Header() {
     const location = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const isActive = (path) => location.pathname === path ? 'font-bold' : '';
-    const ocultarSubmenu = () => {
-            const submenu = document.getElementById('submenu-pink');
-            if (submenu) {
-              submenu.style.visibility = 'hidden';
-              setTimeout(() =>{
-                submenu.style.visibility = 'visible';
-              }, 300);
+    useEffect(() => {
+        // Cierra el menú si se hace clic fuera del menú
+        const handleClickOutside = (event) => {
+            if (menuOpen && !event.target.closest('.fullmenu') && !event.target.closest('.menu-toggle')) {
+                setMenuOpen(false);
             }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // Cleanup event listener cuando el componente se desmonta
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuOpen]);
+
+    const isActive = (path) => location.pathname === path ? 'font-bold' : '';
+
+    const ocultarSubmenu = () => {
+        const submenu = document.getElementById('submenu-pink');
+        if (submenu) {
+            submenu.style.visibility = 'hidden';
+            setTimeout(() => {
+                submenu.style.visibility = 'visible';
+            }, 1200);
+        }
     }
+
     return (
         <>
-        <header>
-            <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
-            </button>
-            
-            <ul className={`fullmenu ${menuOpen ? 'open' : ''}`}>
-                <Link to="/" onClick={() => setMenuOpen(false)} id='logoItemR'><Logo /></Link>
-                <li className="fullmenu__item"><Link to="/" onClick={() => setMenuOpen(false)} className={`${isActive('/')} hover:font-bold`}>NOSOTROS</Link></li>
-                <li className="fullmenu__item"> 
-                    <Link to="/tratamientos" onClick={() => setMenuOpen(false)} className={`${isActive('/tratamientos')} hover:font-bold `}>TRATAMIENTOS</Link>
-                    <ul  id='submenu-pink' className='submenu'>
-                        {tratamientos.map(tratamiento => (
-                            <li key={tratamiento.numero}>
-                                <Link to={`/tratamientos/${tratamiento.numero}`} onClick={() =>{ setMenuOpen(false); ocultarSubmenu()}} className='block p-6 hover:text-gray-400'>
-                                    {tratamiento.nombre}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </li>
-                <Link to="/" onClick={() => setMenuOpen(false)} id='logoItem'><Logo /></Link>
-                <li className="fullmenu__item"><Link to="/dra-modelo" onClick={() => setMenuOpen(false)} className={`${isActive('/dra-modelo')} hover:font-bold`}>DRA. MODELO</Link></li>
-                <li className="fullmenu__item"><Link to="/contacto" onClick={() => setMenuOpen(false)} className={`${isActive('/contacto')} hover:font-bold`}>CONTACTO</Link></li>
-            </ul>
-            
+            <header>
+                <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                    ☰
+                </button>
+                
+                <ul className={`fullmenu ${menuOpen ? 'open' : ''}`}>
+                    <Link to="/" onClick={() => setMenuOpen(false)} id='logoItemR'><Logo /></Link>
+                    <li className="fullmenu__item"><Link to="/" onClick={() => setMenuOpen(false)} className={`${isActive('/')} hover:font-bold`}>NOSOTROS</Link></li>
+                    <li className="fullmenu__item"> 
+                        <Link to="/tratamientos" onClick={() =>{ setMenuOpen(false); ocultarSubmenu()}} className={`${isActive('/tratamientos')} hover:font-bold `}>TRATAMIENTOS</Link>
+                        <ul id='submenu-pink' className='submenu'>
+                            {tratamientos.map(tratamiento => (
+                                <li key={tratamiento.numero}>
+                                    <Link to={`/tratamientos/${tratamiento.numero}`} onClick={() =>{ setMenuOpen(false); ocultarSubmenu()}} className='block p-6 hover:text-gray-400'>
+                                        {tratamiento.nombre}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                    <Link to="/" onClick={() => setMenuOpen(false)} id='logoItem'><Logo /></Link>
+                    <li className="fullmenu__item"><Link to="/dra-modelo" onClick={() => setMenuOpen(false)} className={`${isActive('/dra-modelo')} hover:font-bold`}>DRA. MODELO</Link></li>
+                    <li className="fullmenu__item"><Link to="/contacto" onClick={() => setMenuOpen(false)} className={`${isActive('/contacto')} hover:font-bold`}>CONTACTO</Link></li>
+                </ul>
+            </header>
 
-        </header>
-        <div className='m-4'>
-
-        <Link to="/" id='logoR' className=''><Logo /></Link>
-        </div>
-    </>);
+            <div className='m-4'>
+                <Link to="/" id='logoR' className=''><Logo /></Link>
+            </div>
+        </>
+    );
 }
 
 export default Header;
